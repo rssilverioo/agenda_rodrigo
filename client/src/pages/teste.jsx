@@ -1,16 +1,17 @@
 import React, { useEffect, useState } from "react";
-import "./App.css";
 import Axios from "axios";
-import Card from "./components/cards/cards";
-import InputMask from "react-input-mask";
+import Card from "../components/cards/cards";
 
 
-export default function App() {
+
+export default function Agenda() {
   const [values, setValues] = useState();
   const [listCard, setListCard] = useState([]);
+  
 
   const handleRegisterContato = () => {
     Axios.post("http://localhost:3001/register", {
+      id: values.id,
       name: values.name,
       email: values.email,
       fone: values.fone,
@@ -64,7 +65,7 @@ export default function App() {
           onChange={handleaddValues}
           className="form-control mb-2"
         />
-        <InputMask
+        <input
           type="text"
           placeholder="Telefone"
           name="fone"
@@ -72,6 +73,7 @@ export default function App() {
           mask="(99)99999-9999"
           onChange={handleaddValues}
         />
+
         
         <button onClick={handleRegisterContato} className="btn btn-primary w-100 p-2">
           Cadastrar

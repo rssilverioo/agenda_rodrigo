@@ -16,12 +16,30 @@
 /*!40111 SET @OLD_SQL_NOTES=@@SQL_NOTES, SQL_NOTES=0 */;
 
 --
--- Dumping events for database 'agenda'
+-- Table structure for table `contatos`
 --
 
+DROP TABLE IF EXISTS `contatos`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!50503 SET character_set_client = utf8mb4 */;
+CREATE TABLE `contatos` (
+  `id` int NOT NULL AUTO_INCREMENT,
+  `name` varchar(45) NOT NULL,
+  `email` varchar(45) NOT NULL,
+  `fone` varchar(45) NOT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=6 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
 --
--- Dumping routines for database 'agenda'
+-- Dumping data for table `contatos`
 --
+
+LOCK TABLES `contatos` WRITE;
+/*!40000 ALTER TABLE `contatos` DISABLE KEYS */;
+INSERT INTO `contatos` VALUES (1,'Rodrigo','rodrigo.s.silverio@outlook.com','119536939013'),(2,'Rodrigo Soares Silverio','digo.silverio@outlook.com.br','11953693901'),(3,'Rodrigo Soares Silverio','digo.silverio@outlook.com.br','11953693901'),(4,'Rodrigo Soares Silverio','digo.silverio@outlook.com.br','11953693901'),(5,'Rodrigo Soares Silverio','digo.silverio@outlook.com.br','11953693901');
+/*!40000 ALTER TABLE `contatos` ENABLE KEYS */;
+UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
 
 /*!40101 SET SQL_MODE=@OLD_SQL_MODE */;
@@ -32,4 +50,4 @@
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2022-05-03 18:22:19
+-- Dump completed on 2022-05-03 20:24:53
