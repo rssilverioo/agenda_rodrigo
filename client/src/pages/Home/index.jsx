@@ -1,12 +1,19 @@
 import React, { useEffect, useState } from "react";
 import Axios from "axios";
-import Card from "../components/cards/cards";
+import Card from "../../components/cards";
+import { useNavigate } from 'react-router-dom'
+
+import useAuth from "../../hooks/useAuth";
 
 
 
 export default function Agenda() {
   const [values, setValues] = useState();
   const [listCard, setListCard] = useState([]);
+
+
+  const { signout } = useAuth();
+  const navigate = useNavigate();
   
 
   const handleRegisterContato = () => {
@@ -48,8 +55,10 @@ export default function Agenda() {
   };
 
   return (
+    
     <div className="container d-flex flex-column align-items-center">
-      <div className="shadow-sm p-5 mb-5 bg-body rounded">
+    
+      <div className="shadow-lg p-5 mb-5 bg-body rounded">
         <h1 className="mb-5">Agenda de contato</h1>
         <input
           type="text"
@@ -105,7 +114,7 @@ export default function Agenda() {
           ))}
         </tbody>
       </table>
-
+     <button className="btn btn-primary" onClick={() => [signout(), navigate("/")]}>Logout</button>
       </div>
 
 
